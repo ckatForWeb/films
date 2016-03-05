@@ -1,0 +1,5 @@
+name = new feature
+core = 7.x
+package = Features
+version = 7.x-2.7
+features[features_api][] = api:2
