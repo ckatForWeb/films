@@ -30,43 +30,78 @@ function new_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'body' => 'body',
+    'field_film_genre' => 'field_film_genre',
+    'field_film_img' => 'field_film_img',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'body' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_film_genre' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_film_img' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Content: review film (field_review_film) */
+  $handler->display->display_options['relationships']['field_review_film_nid']['id'] = 'field_review_film_nid';
+  $handler->display->display_options['relationships']['field_review_film_nid']['table'] = 'field_data_field_review_film';
+  $handler->display->display_options['relationships']['field_review_film_nid']['field'] = 'field_review_film_nid';
+  $handler->display->display_options['relationships']['field_review_film_nid']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Film title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: film_img */
+  $handler->display->display_options['fields']['field_film_img']['id'] = 'field_film_img';
+  $handler->display->display_options['fields']['field_film_img']['table'] = 'field_data_field_film_img';
+  $handler->display->display_options['fields']['field_film_img']['field'] = 'field_film_img';
+  $handler->display->display_options['fields']['field_film_img']['relationship'] = 'field_review_film_nid';
+  $handler->display->display_options['fields']['field_film_img']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_film_img']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_film']['id'] = 'field_film';
-  $handler->display->display_options['fields']['field_film']['table'] = 'field_data_field_film';
-  $handler->display->display_options['fields']['field_film']['field'] = 'field_film';
-  $handler->display->display_options['fields']['field_film']['label'] = 'film';
-  /* Field: Field: Genre */
-  $handler->display->display_options['fields']['field_tags_1']['id'] = 'field_tags_1';
-  $handler->display->display_options['fields']['field_tags_1']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['fields']['field_tags_1']['field'] = 'field_tags';
-  $handler->display->display_options['fields']['field_tags_1']['delta_offset'] = '0';
-  /* Field: Field: Genre */
-  $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
-  $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
-  $handler->display->display_options['fields']['field_tags']['delta_offset'] = '0';
-  /* Field: Field: Genre */
-  $handler->display->display_options['fields']['field_tags_2']['id'] = 'field_tags_2';
-  $handler->display->display_options['fields']['field_tags_2']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['fields']['field_tags_2']['field'] = 'field_tags';
-  $handler->display->display_options['fields']['field_tags_2']['delta_offset'] = '0';
-  /* Field: Field: Genre (field_tags:delta) */
-  $handler->display->display_options['fields']['delta']['id'] = 'delta';
-  $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['fields']['delta']['field'] = 'delta';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read more';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  /* Field: Content: film_genre */
+  $handler->display->display_options['fields']['field_film_genre']['id'] = 'field_film_genre';
+  $handler->display->display_options['fields']['field_film_genre']['table'] = 'field_data_field_film_genre';
+  $handler->display->display_options['fields']['field_film_genre']['field'] = 'field_film_genre';
+  $handler->display->display_options['fields']['field_film_genre']['relationship'] = 'field_review_film_nid';
+  $handler->display->display_options['fields']['field_film_genre']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -84,7 +119,7 @@ function new_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'critique' => 'critique',
+    'movie_review' => 'movie_review',
   );
 
   /* Display: critic */
@@ -106,12 +141,12 @@ function new_feature_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('field_review_film'),
+    t('Film title'),
+    t('film_img'),
     t('Body'),
-    t('film'),
-    t('Genre'),
-    t('Genre (field_tags:delta)'),
-    t('.'),
-    t(','),
+    t('Read more'),
+    t('film_genre'),
     t('critic'),
   );
   $export['critique'] = $view;
