@@ -43,10 +43,11 @@ function new_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  /* Field: Content: film */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_film']['id'] = 'field_film';
   $handler->display->display_options['fields']['field_film']['table'] = 'field_data_field_film';
   $handler->display->display_options['fields']['field_film']['field'] = 'field_film';
+  $handler->display->display_options['fields']['field_film']['label'] = 'film';
   /* Field: Field: Genre */
   $handler->display->display_options['fields']['field_tags_1']['id'] = 'field_tags_1';
   $handler->display->display_options['fields']['field_tags_1']['table'] = 'field_data_field_tags';

@@ -428,13 +428,6 @@ function new_feature_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create critique content'.
-  $permissions['create critique content'] = array(
-    'name' => 'create critique content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create movie_review content'.
   $permissions['create movie_review content'] = array(
     'name' => 'create movie_review content',
@@ -485,13 +478,6 @@ function new_feature_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any critique content'.
-  $permissions['delete any critique content'] = array(
-    'name' => 'delete any critique content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any movie_review content'.
   $permissions['delete any movie_review content'] = array(
     'name' => 'delete any movie_review content',
@@ -521,13 +507,6 @@ function new_feature_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own critique content'.
-  $permissions['delete own critique content'] = array(
-    'name' => 'delete own critique content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -604,13 +583,6 @@ function new_feature_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any critique content'.
-  $permissions['edit any critique content'] = array(
-    'name' => 'edit any critique content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any movie_review content'.
   $permissions['edit any movie_review content'] = array(
     'name' => 'edit any movie_review content',
@@ -659,13 +631,6 @@ function new_feature_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
-  );
-
-  // Exported permission: 'edit own critique content'.
-  $permissions['edit own critique content'] = array(
-    'name' => 'edit own critique content',
-    'roles' => array(),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own movie_review content'.
