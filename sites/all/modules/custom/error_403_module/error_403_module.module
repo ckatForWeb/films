@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function error_403_module_menu() {
+    $items = array();
+    $items['403-page'] = array(
+        'title'             => 'Error 403 page',
+        'page callback'     => 'error_403_page',
+        'access callback'   => TRUE
+    );
+    return $items;
+}
+/**
+ * 403 page content.
+ */
+function error_403_page() {
+    return t ('<strong>page 403 </strong>');
+}

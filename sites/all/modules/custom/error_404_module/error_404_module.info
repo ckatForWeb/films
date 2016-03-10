@@ -1,0 +1,5 @@
+; &Id:$
+name = error module
+description = 404 page module
+version = 7.x-dev
+core = 7.x

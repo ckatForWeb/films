@@ -1,0 +1,5 @@
+; &Id:$
+name = error 403 module
+description = 403 page module
+version = 7.x-dev
+core = 7.x
