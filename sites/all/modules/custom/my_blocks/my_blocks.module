@@ -1,0 +1,25 @@
+<?php
+/**
+* Implements hook_block_info().
+*/
+function my_blocks_block_info() {
+    $blocks = array();
+    $blocks['my_first_block'] = array(
+        'info' => t('my custom block'),
+    );
+
+    return $blocks;
+}
+/**
+ * Implements hook_block_view().
+ */
+function my_blocks_block_view($delta = '') {
+    $block = array();
+    if($delta == 'my_first_block'){
+        $block['subject'] = "Block subject";
+        $block['content'] = "Block content";
+
+    }
+    return $block;
+
+}

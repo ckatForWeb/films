@@ -1,0 +1,4 @@
+name = My custom block
+description = Add block to left nav.
+version = 7.x-dev
+core = 7.x
