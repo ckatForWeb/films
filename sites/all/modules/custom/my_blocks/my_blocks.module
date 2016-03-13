@@ -7,7 +7,6 @@ function my_blocks_block_info() {
     $blocks['my_first_block'] = array(
         'info' => t('my custom block'),
     );
-
     return $blocks;
 }
 /**
@@ -18,8 +17,7 @@ function my_blocks_block_view($delta = '') {
     if($delta == 'my_first_block'){
         $block['subject'] = "Block subject";
         $block['content'] = "Block content";
-
     }
     return $block;
-
 }
+
